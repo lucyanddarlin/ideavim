@@ -275,7 +275,7 @@ internal class NerdTree : VimExtension {
     registerCommand("k", NerdAction.ToIj("Tree-selectPrevious"))
     registerCommand(
       "NERDTreeMapActivateNode",
-      "o",
+      "l",
       NerdAction.Code { project, dataContext, _ ->
         val tree = ProjectView.getInstance(project).currentProjectViewPane.tree
 
@@ -366,7 +366,7 @@ internal class NerdTree : VimExtension {
     )
     registerCommand(
       "NERDTreeMapOpenRecursively",
-      "O",
+      "L",
       NerdAction.Code { project, _, _ ->
         val tree = ProjectView.getInstance(project).currentProjectViewPane.tree
         TreeExpandCollapse.expandAll(tree)
@@ -377,7 +377,7 @@ internal class NerdTree : VimExtension {
     )
     registerCommand(
       "NERDTreeMapCloseChildren",
-      "X",
+      "H",
       NerdAction.Code { project, _, _ ->
         val tree = ProjectView.getInstance(project).currentProjectViewPane.tree
         TreeExpandCollapse.collapse(tree)
@@ -388,7 +388,7 @@ internal class NerdTree : VimExtension {
     )
     registerCommand(
       "NERDTreeMapCloseDir",
-      "x",
+      "h",
       NerdAction.Code { project, _, _ ->
         val tree = ProjectView.getInstance(project).currentProjectViewPane.tree
         val currentPath = tree.selectionPath ?: return@Code
